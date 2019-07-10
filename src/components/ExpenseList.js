@@ -10,6 +10,7 @@ const ExpenseList = props => {
       {props.expenses.map(expense => {
         return <ExpenseListItem key={expense.id} {...expense} />;
       })}
+      {!props.expenses && <p>No Expenses</p>}
     </div>
   );
 };
