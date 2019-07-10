@@ -11,9 +11,6 @@ export default function Header() {
       <NavLink to="/create" activeClassName="is-active">
         Add Expense
       </NavLink>
-      <NavLink to="/help" activeClassName="is-active">
-        Help
-      </NavLink>
     </div>
   );
 }
