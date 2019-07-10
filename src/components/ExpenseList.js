@@ -6,11 +6,10 @@ import getVisibleExpenses from "../selectors/expenses";
 const ExpenseList = props => {
   return (
     <div>
-      <h1>Expense List</h1>
+      {props.expenses.length === 0 && <p>No Expenses</p>}
       {props.expenses.map(expense => {
         return <ExpenseListItem key={expense.id} {...expense} />;
       })}
-      {!props.expenses && <p>No Expenses</p>}
     </div>
   );
 };

@@ -7,7 +7,6 @@ const AddExpensePage = props => {
   return (
     <div>
       <h1>Add Expense</h1>
-      <h1>ADD THAT THING DOE</h1>
       <ExpenseForm
         onSubmit={expense => {
           props.dispatch(addExpense(expense));

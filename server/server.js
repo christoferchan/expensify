@@ -6,10 +6,8 @@ const port = process.env.PORT || 3000;
 const publicPath = path.join(__dirname, "..", "build");
 
 app.use(express.static(publicPath));
-app.get("/ping", function(req, res) {
-  return res.send("pong");
-});
-app.get("/*", function(req, res) {
+
+app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "..", "build", "index.html"));
 });
 
