@@ -1,22 +1,29 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { startLogin } from "../actions/auth";
 
-class LoginPage extends Component {
-  render() {
-    return (
-      <div
-        style={{
-          display: "flex",
-          flex: "1",
-          alignItems: "center",
-          justifyContent: "center"
-        }}
-      >
-        <button onClick={() => this.props.history.push("/dashboard")}>
-          Login
-        </button>
-      </div>
-    );
-  }
-}
+const LoginPage = props => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flex: "1",
+        alignItems: "center",
+        justifyContent: "center"
+      }}
+    >
+      <button onClick={props.startLogin}>Login</button>
+    </div>
+  );
+};
 
-export default LoginPage;
+const mapDispatchToProps = dispatch => {
+  return {
+    startLogin: () => dispatch(startLogin())
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(LoginPage);
