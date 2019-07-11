@@ -5,13 +5,12 @@ import "./index.css";
 import AppRouter, { history } from "./routers/AppRouter";
 import * as serviceWorker from "./serviceWorker";
 import configureStore from "./store/configureStore";
-import { startSetExpenses } from "./actions/expeneses";
+import { startSetExpenses } from "./actions/expenses";
 import { login, logout } from "./actions/auth";
 import { firebase } from "./firebase/firebase";
 
 const store = configureStore();
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById("root"));
 const jsx = (
   <Provider store={store}>
     <AppRouter />
@@ -26,6 +25,8 @@ const renderApp = () => {
     hasRendered = true;
   }
 };
+
+ReactDOM.render(<p>Loading...</p>, document.getElementById("root"));
 
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
