@@ -1,18 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { startLogin } from "../actions/auth";
 
-const LoginPage = props => {
+const LoginPage = ({ startLogin }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flex: "1",
-        alignItems: "center",
-        justifyContent: "center"
-      }}
-    >
-      <button onClick={props.startLogin}>Login</button>
+    <div className="box-layout">
+      <div className="box-layout__box">
+        <h1 className="box-layout__title">Expensify</h1>
+        <p>Get your expenses under control.</p>
+        <button className="button" onClick={startLogin}>
+          Login with Google
+        </button>
+      </div>
     </div>
   );
 };

@@ -8,6 +8,7 @@ import LoginPage from "../components/LoginPage";
 import createHistory from "history/createBrowserHistory";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
+import "../styles/styles.scss";
 
 export const history = createHistory();
 
